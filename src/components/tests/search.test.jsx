@@ -31,4 +31,13 @@ describe("Search component", () => {
     });
     expect(prevented).toBe(true);
   });
+
+  it("renders search results when the movies change", () => {
+    wrapper = mount(<Search movies={[]} />);
+    console.log(wrapper.props());
+    wrapper.setProps({
+      movies: [{ name: "Star Wars" }]
+    });
+    expect(wrapper.find("li").props().children).toBe("Star Wars");
+  });
 });

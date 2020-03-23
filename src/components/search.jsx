@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import SearchResults from "./search-results";
 
 class Search extends Component {
   constructor(props) {
@@ -20,13 +21,18 @@ class Search extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          value={this.state.value}
-          onChange={this.handleChange}
-        />
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type="text"
+            value={this.state.value}
+            onChange={this.handleChange}
+          />
+        </form>
+        <div>
+          <SearchResults movies={this.props.movies} />
+        </div>
+      </div>
     );
   }
 }
