@@ -14,9 +14,13 @@ class Search extends Component {
     console.log(this.state.value);
   };
 
+  handleSubmit = e => {
+    e.preventDefault();
+  };
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           value={this.state.value}

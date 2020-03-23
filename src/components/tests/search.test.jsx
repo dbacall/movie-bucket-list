@@ -21,4 +21,14 @@ describe("Search component", () => {
     });
     expect(wrapper.find("input").props().value).toEqual("Film");
   });
+
+  it("cancels the event when submit", () => {
+    let prevented = false;
+    wrapper.find("form").simulate("submit", {
+      preventDefault: () => {
+        prevented = true;
+      }
+    });
+    expect(prevented).toBe(true);
+  });
 });
