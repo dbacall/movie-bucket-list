@@ -20,12 +20,12 @@ describe("ImdbSearch Component", () => {
     expect(wrapper.children(Search)).toHaveLength(1);
   });
 
-  it("updates movies state", () => {
-    const wrapper = mount(<ImdbSearch />);
-    expect(wrapper.state().movies).toEqual([]);
-    const { performSearch } = wrapper.find(Search).props();
-    return performSearch().then(() => {
-      expect(wrapper.state().movies).toHaveLength(10);
-    });
-  });
+  // it("updates movies state", () => {
+  //   const wrapper = mount(<ImdbSearch />);
+  //   expect(wrapper.state().movies).toEqual([]);
+  //   const { performSearch } = wrapper.find(Search).props();
+  //   return performSearch().then(() => {
+  //     expect(wrapper.state().movies).toHaveLength(10);
+  //   });
+  // });
 });

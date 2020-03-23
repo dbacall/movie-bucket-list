@@ -37,7 +37,7 @@ describe("Search component", () => {
     wrapper = mount(<Search movies={[]} />);
     console.log(wrapper.props());
     wrapper.setProps({
-      movies: [{ name: "Star Wars" }]
+      movies: [{ title: "Star Wars" }]
     });
     expect(wrapper.find("li").props().children).toBe("Star Wars");
   });
