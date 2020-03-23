@@ -16,6 +16,7 @@ describe("Search component", () => {
   });
 
   it("echoes user input", () => {
+    wrapper = shallow(<Search performSearch={() => {}} />);
     wrapper.find("input").simulate("change", {
       target: { value: "Film" }
     });

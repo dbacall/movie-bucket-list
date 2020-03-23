@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Search from "./search";
+import ImdbSearch from "./imdb-search";
 
 class MovieList extends Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class MovieList extends Component {
   render() {
     return (
       <React.Fragment>
-        <Search />
+        <ImdbSearch />
         <h2>Movie List</h2>
         <ul>
           {this.state.movies.map(movie => (

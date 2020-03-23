@@ -12,7 +12,7 @@ class Search extends Component {
   handleChange = e => {
     let value = e.target.value;
     this.setState({ value });
-    console.log(this.state.value);
+    this.props.performSearch(value);
   };
 
   handleSubmit = e => {
