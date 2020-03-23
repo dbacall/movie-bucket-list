@@ -12,4 +12,14 @@ describe("SearchResults component", () => {
     const wrapper = shallow(<SearchResults Movies={mockMovies} />);
     expect(wrapper).toMatchSnapshot();
   });
+
+  it("returns empty array when there is no data to map", () => {
+    const wrapper = shallow(<SearchResults />);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("doesn't break with no movies", () => {
+    const wrapper = shallow(<SearchResults />);
+    expect(wrapper.find("li")).toHaveLength(0);
+  });
 });
