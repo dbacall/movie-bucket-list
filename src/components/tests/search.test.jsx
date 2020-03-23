@@ -14,4 +14,11 @@ describe("Search component", () => {
   it("renders", () => {
     expect(wrapper.exists()).toBe(true);
   });
+
+  it("echoes user input", () => {
+    wrapper.find("input").simulate("change", {
+      target: { value: "Film" }
+    });
+    expect(wrapper.find("input").props().value).toEqual("Film");
+  });
 });

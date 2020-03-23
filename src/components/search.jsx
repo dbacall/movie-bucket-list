@@ -7,8 +7,23 @@ class Search extends Component {
       value: ""
     };
   }
+
+  handleChange = e => {
+    let value = e.target.value;
+    this.setState({ value });
+    console.log(this.state.value);
+  };
+
   render() {
-    return <h1>h</h1>;
+    return (
+      <form>
+        <input
+          type="text"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+      </form>
+    );
   }
 }
 
