@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Search from "./search";
 
 class MovieList extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class MovieList extends Component {
   render() {
     return (
       <React.Fragment>
+        <Search />
         <h2>Movie List</h2>
         <ul>
           {this.state.movies.map(movie => (
