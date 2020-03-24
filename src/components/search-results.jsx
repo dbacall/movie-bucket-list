@@ -1,11 +1,18 @@
 import React from "react";
 
-const SearchResults = ({ movies = [] }) => (
-  // console.log(this.props.movies)
+const SearchResults = ({ movies = [], onAdd }) => (
   <ul>
-    {console.log("here", movies)}
-    {movies.map(({ title }) => (
-      <li key={title}>{title}</li>
+    {movies.map(movie => (
+      <li key={movie.title}>
+        {movie.title}{" "}
+        <button
+          onClick={() => {
+            onAdd(movie);
+          }}
+        >
+          Add
+        </button>
+      </li>
     ))}
   </ul>
 );

@@ -5,17 +5,23 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: [{ name: "Harry Potter" }, { name: "Shrek" }]
+      movies: []
     };
   }
+
+  addMovie = movie => {
+    const movies = this.state.movies.concat(movie);
+    this.setState({ movies });
+  };
+
   render() {
     return (
       <React.Fragment>
-        <ImdbSearch />
+        <ImdbSearch onAdd={this.addMovie} />
         <h2>Movie List</h2>
         <ul>
           {this.state.movies.map(movie => (
-            <li key={movie.name}>{movie.name}</li>
+            <li key={movie.title}>{movie.title}</li>
           ))}
         </ul>
       </React.Fragment>

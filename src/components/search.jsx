@@ -30,7 +30,7 @@ class Search extends Component {
           />
         </form>
         <div>
-          <SearchResults movies={this.props.movies} />
+          <SearchResults movies={this.props.movies} onAdd={this.props.onAdd} />
         </div>
       </div>
     );

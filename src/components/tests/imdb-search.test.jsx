@@ -7,7 +7,7 @@ import Search from "../search";
 
 Enzyme.configure({ adapter: new Adapter() });
 
-jest.mock("../../api");
+// jest.mock("../../api");
 
 describe("ImdbSearch Component", () => {
   it("renders", () => {

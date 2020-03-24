@@ -20,6 +20,18 @@ describe("MovieList component", () => {
   });
 
   it("shows the first movie", () => {
+    wrapper = mount(<MovieList />);
+    wrapper.setState({ movies: [{ title: "Harry Potter" }] });
+    expect(
+      wrapper
+        .find("li")
+        .first()
+        .text()
+    ).toEqual("Harry Potter");
+  });
+
+  it("adds a movie to the list", () => {
+    wrapper.addMovie({ title: "Harry Potter" });
     expect(
       wrapper
         .find("li")

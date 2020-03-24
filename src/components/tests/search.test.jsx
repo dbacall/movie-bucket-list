@@ -39,6 +39,6 @@ describe("Search component", () => {
     wrapper.setProps({
       movies: [{ title: "Star Wars" }]
     });
-    expect(wrapper.find("li").props().children).toBe("Star Wars");
+    expect(wrapper.find("li").props().children).toContain("Star Wars");
   });
 });
