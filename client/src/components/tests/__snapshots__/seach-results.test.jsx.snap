@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResults component renders 1`] = `ShallowWrapper {}`;
+
+exports[`SearchResults component returns empty array when there is no data to map 1`] = `ShallowWrapper {}`;
