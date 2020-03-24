@@ -16,6 +16,11 @@ class MovieList extends Component {
     this.setState({ movies });
   };
 
+  onLogoutClick = e => {
+    e.preventDefault();
+    this.props.logoutUser();
+  };
+
   render() {
     const { user } = this.props.auth;
 
