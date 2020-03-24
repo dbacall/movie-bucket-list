@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import ImdbSearch from "./imdb-search";
+import { connect } from "react-redux";
+import { logoutUser } from "../actions/authActions";
 
 class MovieList extends Component {
   constructor(props) {
@@ -15,8 +17,22 @@ class MovieList extends Component {
   };
 
   render() {
+    const { user } = this.props.auth;
+
     return (
       <React.Fragment>
+        <button
+          style={{
+            width: "150px",
+            borderRadius: "3px",
+            letterSpacing: "1.5px",
+            marginTop: "1rem"
+          }}
+          onClick={this.onLogoutClick}
+          className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+        >
+          Logout
+        </button>
         <ImdbSearch onAdd={this.addMovie} />
         <h2>Movie List</h2>
         <ul>
@@ -29,4 +45,8 @@ class MovieList extends Component {
   }
 }
 
-export default MovieList;
+const mapStateToProps = state => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps, { logoutUser })(MovieList);
