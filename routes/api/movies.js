@@ -24,13 +24,9 @@ router.post("/", (req, res) => {
   );
 });
 
-router.get("/", (req, res) => {
-  Movie.find({ userId: req.body.userId }).then((err, movies) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.json(movies);
-    }
+router.get("/:id", (req, res) => {
+  Movie.find({ userId: req.params.id }).then(movies => {
+    res.json(movies);
   });
 });
 

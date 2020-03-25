@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ImdbSearch from "./imdb-search";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
+import axios from "axios";
 
 class MovieList extends Component {
   constructor(props) {
@@ -11,9 +12,46 @@ class MovieList extends Component {
     };
   }
 
+  componentDidMount() {
+    const { user } = this.props.auth;
+    axios
+      .get(`http://localhost:5000/api/movies/${user.id}`)
+      .then(response => {
+        this.setState({ movies: response.data });
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    console.log("here");
+  }
+
   addMovie = movie => {
-    const movies = this.state.movies.concat(movie);
-    this.setState({ movies });
+    const { user } = this.props.auth;
+    const newMovie = {
+      title: movie.title,
+      overview: movie.overview,
+      posterPath: movie.poster_path,
+      releaseDate: movie.release_date,
+      voteAverage: movie.vote_average,
+      userId: user.id
+    };
+    console.log(newMovie);
+
+    axios
+      .post("http://localhost:5000/api/movies", newMovie)
+      .then(res => {
+        console.log(res.data);
+      })
+      .then(
+        axios
+          .get(`http://localhost:5000/api/movies/${user.id}`)
+          .then(response => {
+            this.setState({ movies: response.data });
+          })
+          .catch(function(error) {
+            console.log(error);
+          })
+      );
   };
 
   onLogoutClick = e => {
