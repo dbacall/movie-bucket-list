@@ -38,8 +38,9 @@ class MovieList extends Component {
         >
           Logout
         </button>
+        {console.log(this.state.movies)}
         <ImdbSearch onAdd={this.addMovie} />
-        <h2>Movie List</h2>
+        <h2>{user.name}'s Movie List</h2>
         <ul>
           {this.state.movies.map(movie => (
             <li key={movie.title}>{movie.title}</li>
