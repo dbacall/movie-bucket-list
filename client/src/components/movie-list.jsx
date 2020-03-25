@@ -38,7 +38,7 @@ class MovieList extends Component {
         >
           Logout
         </button>
-        {console.log(this.state.movies)}
+        {console.log(this.state.movies, user)}
         <ImdbSearch onAdd={this.addMovie} />
         <h2>{user.name}'s Movie List</h2>
         <ul>

@@ -22,6 +22,10 @@ const MovieSchema = new Schema({
     type: Number,
     required: true
   },
+  userId: {
+    type: String,
+    required: true
+  },
   dateAdded: {
     type: Date,
     default: Date.now
