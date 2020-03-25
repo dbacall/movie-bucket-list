@@ -30,11 +30,11 @@ router.get("/:id", (req, res) => {
   });
 });
 
-router.delete("/", (req, res) => {
+router.delete("/:id", (req, res) => {
+  console.log("here", req.params.id);
   Movie.deleteOne(
     {
-      userId: req.body.userId,
-      title: req.body.title
+      _id: req.params.id
     },
     function(err, movie) {
       if (err) return res.send(err);

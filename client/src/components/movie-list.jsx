@@ -22,7 +22,6 @@ class MovieList extends Component {
       .catch(function(error) {
         console.log(error);
       });
-    console.log("here");
   }
 
   addMovie = movie => {
@@ -35,23 +34,23 @@ class MovieList extends Component {
       voteAverage: movie.vote_average,
       userId: user.id
     };
-    console.log(newMovie);
 
-    axios
-      .post("http://localhost:5000/api/movies", newMovie)
-      .then(res => {
-        console.log(res.data);
-      })
-      .then(
-        axios
-          .get(`http://localhost:5000/api/movies/${user.id}`)
-          .then(response => {
-            this.setState({ movies: response.data });
-          })
-          .catch(function(error) {
-            console.log(error);
-          })
-      );
+    axios.post("http://localhost:5000/api/movies", newMovie);
+
+    const movies = this.state.movies.concat(movie);
+    this.setState({
+      movies
+    });
+  };
+
+  handleDelete = movie => {
+    axios.delete(`http://localhost:5000/api/movies/${movie._id}`);
+
+    const movies = this.state.movies.filter(
+      thisMovie => thisMovie.title !== movie.title
+    );
+
+    this.setState({ movies });
   };
 
   onLogoutClick = e => {
@@ -76,12 +75,14 @@ class MovieList extends Component {
         >
           Logout
         </button>
-        {console.log(this.state.movies, user)}
         <ImdbSearch onAdd={this.addMovie} />
         <h2>{user.name}'s Movie List</h2>
         <ul>
           {this.state.movies.map(movie => (
-            <li key={movie.title}>{movie.title}</li>
+            <li key={movie.title}>
+              {movie.title}{" "}
+              <button onClick={() => this.handleDelete(movie)}>Delete</button>
+            </li>
           ))}
         </ul>
       </React.Fragment>
