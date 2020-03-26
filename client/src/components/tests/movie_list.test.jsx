@@ -29,14 +29,4 @@ describe("MovieList component", () => {
         .text()
     ).toEqual("Harry Potter");
   });
-
-  it("adds a movie to the list", () => {
-    wrapper.addMovie({ title: "Harry Potter" });
-    expect(
-      wrapper
-        .find("li")
-        .first()
-        .text()
-    ).toEqual("Harry Potter");
-  });
 });
