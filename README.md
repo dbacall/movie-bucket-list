@@ -11,6 +11,7 @@ A full stack MERN web app used to create a list of movies the user wants to watc
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Running the tests
+
 To run the tests and see code coverage, run `npm test` in the terminal
 
 ## Features
@@ -34,3 +35,5 @@ To run the tests and see code coverage, run `npm test` in the terminal
 - Mongodb
 - Mongoose
 - Bcrypt
+- Jest
+- Enzyme
