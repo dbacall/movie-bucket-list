@@ -1,8 +1,9 @@
 .search-result {
   background-color: white;
-  width: 60%;
+  width: 40%;
   text-align: center;
   border: solid black 1px;
+  margin: auto;
 }
 
 .btn-success {

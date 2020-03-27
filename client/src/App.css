@@ -1,7 +1,6 @@
-.App {
+body {
   background-image: url("https://www.installation-international.com/wp-content/uploads/2019/01/cornflake-home-cinema-01.jpg");
   height: 100%;
-  border: solid black 2px;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;

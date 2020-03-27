@@ -8,6 +8,5 @@
 }
 
 .search-results {
-  display: inline-block;
-  margin: auto;
+  width: 100%;
 }

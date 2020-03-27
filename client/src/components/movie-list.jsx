@@ -72,7 +72,7 @@ class MovieList extends Component {
         <h2>{user.name}'s Movie List</h2>
         <div className="movie-list">
           <ul>
-            {this.state.movies.map(movie => (
+            {this.state.movies.reverse().map(movie => (
               <li key={movie.title}>
                 <div className="movie">
                   <div className="movie-poster">

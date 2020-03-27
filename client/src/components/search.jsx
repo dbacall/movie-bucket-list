@@ -44,7 +44,7 @@ class Search extends Component {
             id="search-bar"
           />
         </form>
-        <div classname="search-results">
+        <div className="search-results">
           <SearchResults movies={this.props.movies} onAdd={this.handleAdd} />
         </div>
       </div>
