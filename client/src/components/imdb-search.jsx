@@ -20,12 +20,17 @@ class ImdbSearch extends Component {
     });
   };
 
+  handleAdd = movie => {
+    this.setState({ movies: [] });
+    this.props.onAdd(movie);
+  };
+
   render() {
     return (
       <Search
         movies={this.state.movies}
         performSearch={this.performSearch}
-        onAdd={this.props.onAdd}
+        onAdd={this.handleAdd}
       />
     );
   }

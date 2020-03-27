@@ -1,0 +1,13 @@
+#search-bar {
+  width: 30%;
+  display: block;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  color: white;
+}
+
+.search-results {
+  display: inline-block;
+  margin: auto;
+}

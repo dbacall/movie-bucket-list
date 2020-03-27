@@ -1,0 +1,10 @@
+.search-result {
+  background-color: white;
+  width: 60%;
+  text-align: center;
+  border: solid black 1px;
+}
+
+.btn-success {
+  margin: 1%;
+}

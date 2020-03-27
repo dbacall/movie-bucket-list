@@ -87,7 +87,7 @@ class MovieList extends Component {
                   </div>
                   <button
                     onClick={() => this.handleDelete(movie)}
-                    className="delete-btn"
+                    className="delete-btn btn btn-danger"
                   >
                     Delete
                   </button>
