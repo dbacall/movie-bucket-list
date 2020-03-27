@@ -53,3 +53,22 @@ ul {
   right: 1%;
   bottom: 1%;
 }
+
+.score {
+  position: absolute;
+  top: 5%;
+  right: 1%;
+}
+
+.score-number {
+  border: black solid 1px;
+  background-color: rgb(23, 226, 57);
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.release-date {
+  position: absolute;
+  left: 12%;
+  bottom: 0;
+}

@@ -83,8 +83,14 @@ class MovieList extends Component {
                   </div>
                   <div className="movie-info">
                     <h4>{movie.title}</h4>
+                    <span className="score">
+                      Score: <i className="score-number">{movie.voteAverage}</i>
+                    </span>
                     <p className="movie-summary">Summary: {movie.overview}</p>
                   </div>
+                  <span className="release-date">
+                    Release Date: {movie.releaseDate}
+                  </span>
                   <button
                     onClick={() => this.handleDelete(movie)}
                     className="delete-btn btn btn-danger"
