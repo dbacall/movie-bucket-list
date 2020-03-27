@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
+import "./styles/navbar.css";
 
 class Navbar extends Component {
   onLogoutClick = e => {
@@ -20,7 +21,7 @@ class Navbar extends Component {
             marginTop: "1rem"
           }}
           onClick={this.onLogoutClick}
-          className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+          className="btn btn-success log-out-btn"
         >
           Logout
         </button>
@@ -43,8 +44,8 @@ class Navbar extends Component {
             >
               Movie Bucket List
             </Link>
-            {this.renderLogOutButton(user)}
           </div>
+          {this.renderLogOutButton(user)}
         </nav>
       </div>
     );
