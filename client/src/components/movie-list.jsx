@@ -3,6 +3,7 @@ import ImdbSearch from "./imdb-search";
 import { connect } from "react-redux";
 import { logoutUser } from "../actions/authActions";
 import axios from "axios";
+import "./styles/movie-list.css";
 
 class MovieList extends Component {
   constructor(props) {
@@ -58,21 +59,43 @@ class MovieList extends Component {
     this.props.logoutUser();
   };
 
+  getUrl = posterPath => {
+    return `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${posterPath}`;
+  };
+
   render() {
     const { user } = this.props.auth;
-    console.log(user === null);
+    console.log(this.state.movies);
     return (
       <React.Fragment>
         <ImdbSearch onAdd={this.addMovie} />
         <h2>{user.name}'s Movie List</h2>
-        <ul>
-          {this.state.movies.map(movie => (
-            <li key={movie.title}>
-              {movie.title}{" "}
-              <button onClick={() => this.handleDelete(movie)}>Delete</button>
-            </li>
-          ))}
-        </ul>
+        <div className="movie-list">
+          <ul>
+            {this.state.movies.map(movie => (
+              <li key={movie.title}>
+                <div className="movie">
+                  <div className="movie-poster">
+                    <img
+                      src={this.getUrl(movie.posterPath)}
+                      className="movie-image"
+                    />
+                  </div>
+                  <div className="movie-info">
+                    <h4>{movie.title}</h4>
+                    <p className="movie-summary">Summary: {movie.overview}</p>
+                  </div>
+                  <button
+                    onClick={() => this.handleDelete(movie)}
+                    className="delete-btn"
+                  >
+                    Delete
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </React.Fragment>
     );
   }

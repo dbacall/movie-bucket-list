@@ -10,7 +10,6 @@ class Navbar extends Component {
   };
 
   renderLogOutButton = user => {
-    console.log("here", user, typeof user.id == "string");
     if (typeof user.id === "string") {
       return (
         <button

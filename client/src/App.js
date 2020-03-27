@@ -11,6 +11,7 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import PrivateRoute from "./components/private-route/PrivateRoute";
+import "./App.css";
 
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken;

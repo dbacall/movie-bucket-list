@@ -1,0 +1,55 @@
+h2 {
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+ul {
+  position: relative;
+  width: 70%;
+  margin: auto;
+}
+
+.movie-list {
+  height: 100%;
+}
+
+.movie {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  border: solid black 1px;
+  background-color: white;
+  padding: 8%;
+  width: 100%;
+}
+
+.movie-poster {
+  position: absolute;
+  width: 10%;
+  left: 1%;
+  top: 1%;
+}
+
+.movie-image {
+  display: block;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.movie-info {
+  position: absolute;
+  width: 85%;
+  right: 0;
+  top: 0;
+}
+
+.movie-summary {
+  margin-top: 2%;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 1%;
+  bottom: 1%;
+}
