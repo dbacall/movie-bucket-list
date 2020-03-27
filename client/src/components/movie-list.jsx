@@ -60,21 +60,9 @@ class MovieList extends Component {
 
   render() {
     const { user } = this.props.auth;
-
+    console.log(user === null);
     return (
       <React.Fragment>
-        <button
-          style={{
-            width: "150px",
-            borderRadius: "3px",
-            letterSpacing: "1.5px",
-            marginTop: "1rem"
-          }}
-          onClick={this.onLogoutClick}
-          className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-        >
-          Logout
-        </button>
         <ImdbSearch onAdd={this.addMovie} />
         <h2>{user.name}'s Movie List</h2>
         <ul>
