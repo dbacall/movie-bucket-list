@@ -47,11 +47,11 @@ class MovieList extends Component {
   handleDelete = movie => {
     axios.delete(`http://localhost:5000/api/movies/${movie._id}`);
 
-    const movies = this.state.movies.filter(
-      thisMovie => thisMovie.title !== movie.title
-    );
-
-    this.setState({ movies });
+    this.setState({
+      movies: this.state.movies.filter(
+        thisMovie => thisMovie.title !== movie.title
+      )
+    });
   };
 
   onLogoutClick = e => {
@@ -84,7 +84,8 @@ class MovieList extends Component {
                   <div className="movie-info">
                     <h4>{movie.title}</h4>
                     <span className="score">
-                      Score: <i className="score-number">{movie.voteAverage}</i>
+                      Score:{" "}
+                      <i className="score-number">{movie.voteAverage * 10}</i>
                     </span>
                     <p className="movie-summary">Summary: {movie.overview}</p>
                   </div>
