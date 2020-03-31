@@ -38,9 +38,8 @@ class MovieList extends Component {
 
     axios.post("http://localhost:5000/api/movies", newMovie);
 
-    const movies = this.state.movies.concat(movie);
     this.setState({
-      movies
+      movies: this.state.movies.concat(movie)
     });
   };
 
