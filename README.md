@@ -16,7 +16,7 @@ A full stack MERN web app used to create a list of movies the user wants to watc
 
 ## Running the tests
 
-To run the tests and see code coverage, run `npm test` in the terminal
+To run the tests, run `cd client && npm test` in the terminal
 
 ## Features
 
