@@ -36,8 +36,8 @@ app.use(passport.initialize());
 
 require("./config/passport")(passport);
 
-app.use("/api/users", users);
+app.use("/users", users);
 
-app.use("/api/movies", movies);
+app.use("/movies", movies);
 
 app.listen(port, () => console.log(`Server up and running on port ${port}`));

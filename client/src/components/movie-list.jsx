@@ -16,7 +16,7 @@ class MovieList extends Component {
   componentDidMount() {
     const { user } = this.props.auth;
     axios
-      .get(`http://localhost:5000/api/movies/${user.id}`)
+      .get(`http://localhost:5000/movies/${user.id}`)
       .then(response => {
         this.setState({ movies: response.data });
       })
@@ -36,7 +36,7 @@ class MovieList extends Component {
       userId: user.id
     };
 
-    axios.post("http://localhost:5000/api/movies", newMovie);
+    axios.post("http://localhost:5000/movies", newMovie);
 
     this.setState({
       movies: this.state.movies.concat(movie)
@@ -44,7 +44,7 @@ class MovieList extends Component {
   };
 
   handleDelete = movie => {
-    axios.delete(`http://localhost:5000/api/movies/${movie._id}`);
+    axios.delete(`http://localhost:5000/movies/${movie._id}`);
 
     this.setState({
       movies: this.state.movies.filter(
