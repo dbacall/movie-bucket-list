@@ -30,9 +30,9 @@ class MovieList extends Component {
     const newMovie = {
       title: movie.title,
       overview: movie.overview,
-      posterPath: movie.poster_path,
-      releaseDate: movie.release_date,
-      voteAverage: movie.vote_average,
+      poster_path: movie.poster_path,
+      release_date: movie.release_date,
+      vote_average: movie.vote_average,
       userId: user.id
     };
 
@@ -58,8 +58,8 @@ class MovieList extends Component {
     this.props.logoutUser();
   };
 
-  getUrl = posterPath => {
-    return `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${posterPath}`;
+  getUrl = poster_path => {
+    return `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${poster_path}`;
   };
 
   render() {
@@ -76,7 +76,7 @@ class MovieList extends Component {
                 <div className="movie">
                   <div className="movie-poster">
                     <img
-                      src={this.getUrl(movie.posterPath)}
+                      src={this.getUrl(movie.poster_path)}
                       className="movie-image"
                     />
                   </div>
@@ -84,12 +84,12 @@ class MovieList extends Component {
                     <h4>{movie.title}</h4>
                     <span className="score">
                       Score:{" "}
-                      <i className="score-number">{movie.voteAverage * 10}</i>
+                      <i className="score-number">{movie.vote_average * 10}</i>
                     </span>
                     <p className="movie-summary">Summary: {movie.overview}</p>
                   </div>
                   <span className="release-date">
-                    Release Date: {movie.releaseDate}
+                    Release Date: {movie.release_date}
                   </span>
                   <button
                     onClick={() => this.handleDelete(movie)}

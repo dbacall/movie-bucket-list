@@ -10,15 +10,15 @@ const MovieSchema = new Schema({
     type: String,
     required: true
   },
-  posterPath: {
+  poster_path: {
     type: String,
     required: true
   },
-  releaseDate: {
+  release_date: {
     type: String,
     required: true
   },
-  voteAverage: {
+  vote_average: {
     type: Number,
     required: true
   },
