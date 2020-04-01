@@ -9,8 +9,8 @@ A full stack MERN web app used to create a list of movies the user wants to watc
 ## Getting Started
 
 - Fork this repo and clone it to your local system
-- To install dependencies, run npm install in the terminal
-- In the project directory, you can run `npm start`
+- To install dependencies, run `npm install` in the terminal
+- In the project directory, you can run `npm run dev`
 - Runs the app in the development mode.
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
