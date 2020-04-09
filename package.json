@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "12.16.x"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
@@ -13,9 +16,6 @@
   },
   "author": "",
   "license": "ISC",
-  "engines": {
-    "node": "10.x"
-  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
