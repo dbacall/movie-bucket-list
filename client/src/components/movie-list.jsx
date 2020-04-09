@@ -16,7 +16,9 @@ class MovieList extends Component {
   componentDidMount() {
     const { user } = this.props.auth;
     axios
-      .get(`${process.env.PORT}/movies/${user.id}`)
+      .get(
+        `https://movie-bucket-list.herokuapp.com/${process.env.PORT}/movies/${user.id}`
+      )
       .then((response) => {
         this.setState({ movies: response.data });
       })
@@ -44,7 +46,9 @@ class MovieList extends Component {
   };
 
   handleDelete = (movie) => {
-    axios.delete(`${process.env.PORT}/movies/${movie._id}`);
+    axios.delete(
+      `https://movie-bucket-list.herokuapp.com/${process.env.PORT}/movies/${movie._id}`
+    );
 
     this.setState({
       movies: this.state.movies.filter(
