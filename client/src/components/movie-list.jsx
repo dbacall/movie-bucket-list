@@ -9,7 +9,7 @@ class MovieList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      movies: [],
     };
   }
 
@@ -17,15 +17,15 @@ class MovieList extends Component {
     const { user } = this.props.auth;
     axios
       .get(`http://localhost:5000/movies/${user.id}`)
-      .then(response => {
+      .then((response) => {
         this.setState({ movies: response.data });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
 
-  addMovie = movie => {
+  addMovie = (movie) => {
     const { user } = this.props.auth;
     const newMovie = {
       title: movie.title,
@@ -33,32 +33,32 @@ class MovieList extends Component {
       poster_path: movie.poster_path,
       release_date: movie.release_date,
       vote_average: movie.vote_average,
-      userId: user.id
+      userId: user.id,
     };
 
-    axios.post("http://localhost:5000/movies", newMovie);
+    axios.post("/movies", newMovie);
 
     this.setState({
-      movies: this.state.movies.concat(movie)
+      movies: this.state.movies.concat(movie),
     });
   };
 
-  handleDelete = movie => {
+  handleDelete = (movie) => {
     axios.delete(`http://localhost:5000/movies/${movie._id}`);
 
     this.setState({
       movies: this.state.movies.filter(
-        thisMovie => thisMovie.title !== movie.title
-      )
+        (thisMovie) => thisMovie.title !== movie.title
+      ),
     });
   };
 
-  onLogoutClick = e => {
+  onLogoutClick = (e) => {
     e.preventDefault();
     this.props.logoutUser();
   };
 
-  getUrl = poster_path => {
+  getUrl = (poster_path) => {
     return `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${poster_path}`;
   };
 
@@ -71,7 +71,7 @@ class MovieList extends Component {
         <h2>{user.name}'s Movie List</h2>
         <div className="movie-list">
           <ul>
-            {this.state.movies.reverse().map(movie => (
+            {this.state.movies.reverse().map((movie) => (
               <li key={movie.title}>
                 <div className="movie">
                   <div className="movie-poster">
@@ -107,8 +107,8 @@ class MovieList extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
 export default connect(mapStateToProps, { logoutUser })(MovieList);
