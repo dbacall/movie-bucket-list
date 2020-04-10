@@ -17,7 +17,7 @@ export const registerUser = (userData, history) => (dispatch) => {
 // Login - get user token
 export const loginUser = (userData) => (dispatch) => {
   axios
-    .post(`https://movie-bucket-list.herokuapp.com/users/login`, userData)
+    .post(`https://localhost:5000/users/login`, userData)
     .then((res) => {
       // Save to localStorage
       // Set token to localStorage
