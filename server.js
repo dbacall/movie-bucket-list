@@ -26,6 +26,7 @@ app.use(bodyParser.json());
 mongoose
   .connect(db, {
     useUnifiedTopology: true,
+    useCreateIndex: true,
     useNewUrlParser: true,
   })
   .then(() => console.log("DB Connected!"))
