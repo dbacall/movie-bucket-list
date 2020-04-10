@@ -5,7 +5,7 @@ import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types";
 // Register User
 export const registerUser = (userData, history) => (dispatch) => {
   axios
-    .post(`https://movie-bucket-list.herokuapp.com/users/register`, userData)
+    .post(`https://localhost:5000/users/register`, userData)
     .then((res) => history.push("/login")) // re-direct to login on successful register
     .catch((err) =>
       dispatch({
